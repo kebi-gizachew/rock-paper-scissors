@@ -36,11 +36,13 @@ const trial=(a,b)=>{
 const finWin=()=>{
     if(computerScore==round || userScore==round){
         if(computerScore>userScore){
-            playSoundCon();
             resultText.innerText="🥺Computer wins the game!";
+            playSoundLos();
         }
         else{
             resultText.innerText="💃🏾Congratulations, You Win!";
+            playSoundCon();
+
         }
         setTimeout(() => {
             restart.showModal();
@@ -48,6 +50,7 @@ const finWin=()=>{
     }
 }
 const reset=()=>{
+    
         userScore=0;
         computerScore=0;
         user.innerText=userScore;
@@ -55,8 +58,13 @@ const reset=()=>{
         round=5;
 }
 const playSoundCon=()=>{
-    let audio = new Audio("https://www.myinstants.com/en/instant/ye-ww3-22423/");
+    let audio = new Audio("https://orangefreesounds.com/wp-content/uploads/2023/02/Short-clapping-sound-effect.mp3");
 audio.play();
+
+}
+const playSoundLos=()=>{
+    let aud = new Audio("https://freesound.org/data/previews/331/331912_3248244-lq.mp3");
+aud.play();
 
 }
 
