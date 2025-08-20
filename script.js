@@ -36,6 +36,7 @@ const trial=(a,b)=>{
 const finWin=()=>{
     if(computerScore==round || userScore==round){
         if(computerScore>userScore){
+            playSoundCon();
             resultText.innerText="🥺Computer wins the game!";
         }
         else{
@@ -52,6 +53,11 @@ const reset=()=>{
         user.innerText=userScore;
         computer.innerText=computerScore;
         round=5;
+}
+const playSoundCon=()=>{
+    let audio = new Audio("https://www.myinstants.com/en/instant/ye-ww3-22423/");
+audio.play();
+
 }
 
 btnRock.addEventListener("click",()=>{
